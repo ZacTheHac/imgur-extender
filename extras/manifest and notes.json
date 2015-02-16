@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+
+  "name": "Imgur Extender",
+  "description": "Hopefully people will stop bothering @Sarah for new loading gifs every 30 seconds",
+  "version": "1.0",
+  "icons": { 
+   "16": "icon/19.png", //shhhh, I couldn't make a decent 16, so it's the nicer-looking 19 scaled down a bit
+   "19": "icon/19.png",
+   "48": "icon/48.png",
+   "128": "icon/128.png" },
+   "options_page": "settings.html",
+
+  "permissions": [
+    "storage", //to save settings
+	"webRequest", //to catch the loading of the loading gifs
+	"webRequestBlocking", //to make it synchronous, so it doesn't load the images before I can redirect them
+    "*://imgur.com/*", //so I can mess with pages on imgur
+	"*://*.imgur.com/*", //or any subdomains of it
+	"tabs" //so I can see which tabs are browsing imgur to add the pageaction
+  ],
+  "page_action": {
+    "default_icon": "icon/19-disabled.png", //default to disabled, because if the icon isn't set, then the extension isn't working
+    "default_title": "SOMETHING BROKE. PANIC." //only displayed if the script doesn't change it
+  },
+  "background": {
+     "scripts": ["background.js"],
+     "persistent": true
+   },
+  "content_scripts":[{
+	"matches": ["*://*.imgur.com/*","*://imgur.com/*"],
+	"js": ["replaceloader.js"],
+	"run_at": "document_start",
+	"all_frames": true
+ }]
+}
