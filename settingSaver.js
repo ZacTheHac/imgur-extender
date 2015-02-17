@@ -112,6 +112,7 @@ function list() {
 
 function check_for_changes(){
 load_options();
+_gaq.push(['_trackEvent', 'loadingLink', document.getElementById('link').value]);
 	if(document.getElementById('link').value != settings.LoadingLink || document.getElementById('active').checked != items.Activated || document.getElementById('resize').checked != items.Resize || document.getElementById('markAdmins').checked != items.MarkStaff || document.getElementById('markSelf').checked != items.MarkSelf){
 		return true;
 	}
@@ -123,6 +124,16 @@ document.getElementById('save').addEventListener('click',save_options);
 document.getElementById('list').addEventListener('click',list);
 document.getElementById('view').addEventListener('click',view_image);
 document.getElementById('Banner').innerHTML = "Imgur Extender v"+chrome.runtime.getManifest().version;
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-59801034-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = 'https://ssl.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
 
 window.onbeforeunload = function() {
 	if(check_for_changes()){

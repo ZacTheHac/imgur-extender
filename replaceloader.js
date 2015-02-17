@@ -208,11 +208,13 @@ function getUser() {
 	if(document.getElementsByClassName('account-user-name')[0]===null){
 		loggedIn=false;
 		console.log("You aren't signed into imgur!");
+		_gaq.push(['_setCustomVar',1,'Login','N/A',2]);
 	}//they're not signed in
 	else{
 		loggedIn=true;
 		var userlink = document.getElementsByClassName('account-user-name')[0].href;
 		user = userlink.substring(userlink.lastIndexOf("/")+1,userlink.length);
+		_gaq.push(['_setCustomVar',1,'Login',user,2]);
 		//console.log("Hello "+user+"! Thank you for using imgur x-tend!"); 
 	}
 }
@@ -272,3 +274,13 @@ function unSuperUpvote(){
 function unSuperDownvote(){
 	$('[title=dislike]').filter('.pushed').click();
 }
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-59801034-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = 'https://ssl.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
