@@ -4,7 +4,14 @@ var settings;
 var loggedIn;
 var user;
 //"use strict";
+/*Stolen from heartbroken (shh, CSS modification is something I don't know how to do)
+var css = '.favorite-image.favorited, .favorite-image:active { color: #85BF25 !important; }',
+    head = document.head,
+    style = document.createElement('style');
 
+style.appendChild(document.createTextNode(css));
+head.appendChild(style);
+*/
 //want to show notifications? the notifications box is this html: <a href="//imgur.com/account/notifications" class="notification-area new-notification ">*# of notifications*</a>
 //add something to options on comments?
 //<div class="options">
@@ -253,7 +260,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
 	if(request.command == "SettingsChanged"){
 		load_options();
 	}
-	if(request.command == "doStuff().exe"){
+	else if(request.command == "doStuff().exe"){
 		//tell it that it's dumb and ugly, and should feel bad, but then get to work.
 		resizeImages(); //just run the script, it'll find it.
 	}
