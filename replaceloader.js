@@ -93,7 +93,7 @@ function markUsers() {
 			}
 			//var commenters = document.getElementsByClassName("author");
 			var commenters = document.getElementsByClassName("usertext textbox first1");
-			for (var i = 0, length = commenters.length; i < length; i++){//put userIDs, only does the first 200
+			for (var i = 0, length = commenters.length; i < length; i++){//put userIDs
 				if(commenters[i].IDProcessed != "true"){
 					try{
 						if(settings.ListID){
@@ -179,7 +179,7 @@ function markUsers() {
 	document.addEventListener("DOMSubtreeModified", markUsers);
 }
 //document.addEventListener('click', markUsers);//check if they're expanding comments, and re-check for staff in the expanded comments
-document.addEventListener("DOMSubtreeModified", markUsers);
+//document.addEventListener("DOMSubtreeModified", markUsers);//so they just pushed out an update that broke all this. I'll have to do a major overhaul. author IDs aren't even used anymore...
 //document.getElementById('favoriteComment').addEventListener('click',view_image);
 
 //how to make favorited comments:
