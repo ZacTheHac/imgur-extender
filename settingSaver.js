@@ -113,10 +113,35 @@ function list() {
 function check_for_changes(){
 load_options();
 _gaq.push(['_trackEvent', 'loadingLink', document.getElementById('link').value]);
-	if(document.getElementById('link').value != settings.LoadingLink || document.getElementById('active').checked != items.Activated || document.getElementById('resize').checked != items.Resize || document.getElementById('markAdmins').checked != items.MarkStaff || document.getElementById('markSelf').checked != items.MarkSelf){
-		return true;
+var changes = "";
+	if(document.getElementById('link').value != settings.LoadingLink){
+		changes += 'Loading link changed from "'+settings.LoadingLink+'" to "'+document.getElementById('link').value+'"\n';
 	}
-	return false;
+	if(document.getElementById('active').checked != settings.Activated){
+		if(document.getElementById('active').checked)
+			changes += 'Custom loading icons activated.\n';
+		else
+			changes += 'Custom loading icons deactivated.\n';
+	}
+	if(document.getElementById('resize').checked != settings.Resize){
+		if(document.getElementById('resize').checked)
+			changes += 'Custom loading icons will now be resized.\n';
+		else
+			changes += 'Custom loading icons will no longer be resized.\n';
+	}
+	if(document.getElementById('markAdmins').checked != settings.MarkStaff){
+		if(document.getElementById('markAdmins').checked)
+			changes += 'Staff will now be marked in the comments.\n';
+		else
+			changes += 'Staff will no longer be marked in the comments.\n';
+	}
+	if(document.getElementById('markSelf').checked != settings.MarkSelf){
+		if(document.getElementById('markSelf').checked)
+			changes += 'You will now be marked in the comments.\n';
+		else
+			changes += 'You will no longer be marked in the comments.\n';
+	}
+	return changes;
 }
 
 document.addEventListener('DOMContentLoaded', restore_options);
@@ -136,7 +161,8 @@ _gaq.push(['_trackPageview']);
 })();
 
 window.onbeforeunload = function() {
-	if(check_for_changes()){
-		return "You have made unsaved changes.";
+	var changes = check_for_changes();
+	if(changes != ''){
+		return "You have made unsaved changes:\n"+changes;
 	}
 }
