@@ -1,5 +1,24 @@
 var settings;
 
+function isAprilFools(){
+	var currentDate = new Date()
+    var day = currentDate.getDate()
+    var month = currentDate.getMonth() + 1
+    if(month === 4 && day === 1){
+    	return true;
+    }
+    else{
+    	return false;
+    }
+}
+
+function weirdLoader(){
+	var possibleLoaders = Array('http://i.imgur.com/yxkbl4x.gif','http://i.imgur.com/Ghdwywk.gif','http://i.imgur.com/OmC0Bvy.gif');
+	//alan, sera, edward
+	return possibleLoaders[~~(Math.random()*possibleLoaders.length)];
+	//could use Math.floor, but ~~ uses the closest integer
+}
+
 function getSettings(){ //loads the user settings
 	chrome.storage.sync.get({
 		LoadingLink: 'http://i.imgur.com/QirvO9D.gif',
@@ -9,6 +28,9 @@ function getSettings(){ //loads the user settings
 		MarkSelf: true
 	}, function(items) {
 		settings = items;
+		if(isAprilFools()){
+			settings.LoadingLink = weirdLoader();
+		}
 	});
 }
 

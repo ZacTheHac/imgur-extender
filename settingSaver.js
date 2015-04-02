@@ -21,7 +21,15 @@ function save_options() {
 		MarkStaff: markAdmins,
 		MarkSelf: markSelf,
 		ListID: listID
-	},setStatus('Settings Saved!')
+	},function(){//this is a workaround for the fact that syncing is asynchronous, so unless your main thread is super slow, it doesn't update in time.
+		settings.LoadingLink = document.getElementById('link').value;
+		settings.Activated = document.getElementById('active').checked;
+		settings.Resize = document.getElementById('resize').checked;
+		settings.MarkStaff = document.getElementById('markAdmins').checked;
+		settings.MarkSelf = document.getElementById('markSelf').checked;
+		settings.ListID = document.getElementById('listIDs').checked;
+		setStatus('Settings Saved!')//I'm dumb. you can only have 1 callback function...
+	}
 	
 	/* function() {
 		var status = document.getElementById('save');
@@ -111,7 +119,7 @@ function list() {
 }
 
 function check_for_changes(){
-load_options();
+//load_options();//don't need to do this anymore. I manually update the settings object when they hit save.
 _gaq.push(['_trackEvent', 'loadingLink', document.getElementById('link').value]);
 var changes = "";
 	if(document.getElementById('link').value != settings.LoadingLink){
