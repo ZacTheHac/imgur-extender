@@ -69,6 +69,7 @@ function view_image() {
 function clean_link() {
 	link = document.getElementById('link').value;
 	if ((link.lastIndexOf(".") < link.length - 5) && (link.indexOf("http://imgur.com/") == 0)) { //it's not a direct link, but it's on imgur
+		setStatus("creating a direct link");
 		var code = link.substring(link.lastIndexOf("/") + 1, link.length);
 		link = "http://i.imgur.com/" + code + ".gif"; //make a proper direct link to the image
 		document.getElementById('link').value = link;
@@ -98,7 +99,6 @@ function setStatus(statusText) {
 
 function list() {
 	window.open('http://imgur.com/a/cDYBj', '_blank');
-	//document.getElementById('link').value = 'http://i.imgur.com/QirvO9D.gif';
 }
 
 function check_for_changes() {

@@ -38,10 +38,10 @@ load_options(); //once it processes the script, it should load the settings righ
 function contains(a, obj) {
 	for (var i = 0; i < a.length; i++) {
 		if (a[i] === obj) {
-			return true;
+			return i;
 		}
 	}
-	return false;
+	return -1;
 }
 
 //var StaffMembers = ["4", "9571", "1423365", "4520105", "296176", "13326847", "189598", "1975", "14567826", "6512561"];
@@ -104,58 +104,51 @@ function addUserIDs(commenters) {
 function markUsers() {
 	document.removeEventListener("DOMSubtreeModified", markUsers); //make it so my modifications don't recursively call this again and again.
 	var StaffMembers = ['Alan', 'sarah', 'TyrannoSARAusRex', 'tonygoogs', 'badmonkey0001', 'spatrizi', 'brianna', 'talklittle', 'untest3d', 'thespottedbunny', 'cfry99'];
+	var GenerallyCoolPeople = ['mistersavage', 'sarah'];
+	var genCoolPplTags = ['<span style="width:92px;color:#85BF25;background-color:Black">THE Adam Savage</span>', '<span style="width:92px;color:#85BF25;background-color:Black">SaraPls</span>'];
 
-	if (!working) { //only let one be running at a time.
-		working = true;
+	if (document.readyState == "complete") {
+		addFavButtons();
 
-		if (document.readyState == "complete") {
-			addFavButtons();
+		var commenters = document.getElementsByClassName("usertext textbox first1");
+		//I would add userIDs here, but that's gone forever, at least as automatic. code is kept, but never run
 
-			var commenters = document.getElementsByClassName("usertext textbox first1");
-			//I would add userIDs here, but that's gone forever, at least as automatic. code is kept, but never run
-
-			if (document.URL.indexOf('/user/') == -1) { //we're not on a userpage
-				getUser();
-				var selfTag = '<span class="selfTag" style="width:92px;color:#85BF25;background-color:Black">YOU</span> ';
-				var Imp = "width:92px;color:BLACK;background-color:#85BF25;font-size:15px"
-				var unImp = "font-size:11px;color:SlateGray;background-color:"
-				var myTag = '<span class="creatorTag" style=' + Imp + '>iX</span><span style=' + unImp + '>-imgur Extender creator</span> ';
-				var staffTag = '<span class="staffTag" style="background-color:#85BF25;width:92px !important;height:36px !important;color:green"><img src="http://s.imgur.com/images/imgurlogo-header.png"></span>';
-				var currUserName;
+		if (document.URL.indexOf('/user/') == -1) { //we're not on a userpage
+			getUser();
+			var selfTag = '<span class="selfTag" style="width:92px;color:#85BF25;background-color:Black">YOU</span> ';
+			var Imp = "width:92px;color:BLACK;background-color:#85BF25;font-size:15px"
+			var unImp = "font-size:11px;color:SlateGray;background-color:"
+			var myTag = '<span class="creatorTag" style=' + Imp + '>iX</span><span style=' + unImp + '>-imgur Extender creator</span> ';
+			var staffTag = '<span class="staffTag" style="background-color:#85BF25;width:92px !important;height:36px !important;color:green"><img src="http://s.imgur.com/images/imgurlogo-header.png"></span>';
+			var currUserName;
+			try {//put the try outside so that when it breaks it doesn't break super badly...
 				for (var i = 0, length = commenters.length; i < length; i++) {
 					if (commenters[i].tagged != "true") {
-						currUserName = commenters[i].children[0].children[0].innerText; //gets their username
+						currUserName = commenters[i].getElementsByClassName("author")[0].children[0].innerText; //gets their username
 						currUserName = currUserName.substring(0, currUserName.length - 1); //remove the trailing space
-						try {
-							if (settings.MarkStaff) {
-								if (contains(StaffMembers, currUserName)) {
-									//if (commenters[i].tagged != true) {
-									commenters[i].innerHTML = staffTag + commenters[i].innerHTML;
-									commenters[i].staffTagged = "true";
-									//}
-								}
+						if (settings.MarkStaff) {
+							if (contains(StaffMembers, currUserName) != -1) { //staff
+								commenters[i].innerHTML = staffTag + commenters[i].innerHTML;
 							}
-							if (settings.MarkSelf && loggedIn) {
-								//none of that old stripping here. mmm. clean
-								if (currUserName == user) {
-									commenters[i].innerHTML = selfTag + commenters[i].innerHTML;
-								}
-							}
-							if (currUserName == 'ZacMuerte') { //ooh! that's me they're talkin' about!
-								//if (creator.innerHTML.indexOf(myTag) == -1) { //if it's not there, then we can apply it
-								commenters[i].innerHTML = myTag + commenters[i].innerHTML;
-								//}
-							}
-							commenters[i].tagged = "true";
-						} catch (ex) {
-							console.log("[iX] Staff marking failed!" + ex);
 						}
+						var userNum = contains(GenerallyCoolPeople, currUserName); //cool people
+						if (userNum != -1) {
+							commenters[i].innerHTML = genCoolPplTags[userNum] + commenters[i].innerHTML;
+						}
+						if (settings.MarkSelf && loggedIn && currUserName == user) { //YOU
+							commenters[i].innerHTML = selfTag + commenters[i].innerHTML;
+						}
+						if (currUserName == 'ZacMuerte') { //ooh! that's me they're talkin' about!
+							commenters[i].innerHTML = myTag + commenters[i].innerHTML;
+						}
+						commenters[i].tagged = "true";
 					}
 				}
+			} catch (ex) {
+				console.log("[iX] Staff marking failed!" + ex);
 			}
 		}
 	}
-	working = false;
 	document.addEventListener("DOMSubtreeModified", markUsers);
 }
 document.addEventListener("DOMSubtreeModified", markUsers);
@@ -185,7 +178,9 @@ function addFavComment(caller) {
 	//var authorId = authorTag.attributes["data-author"].value
 		//I need to find a way to grab their ID now.
 	var comment = caller.parentElement.parentElement.parentElement.parentElement.children[caller.parentElement.parentElement.parentElement.parentElement.children.length - 1].innerText; //stupid badges fucked it up. it's fixed now
-	var link = document.URL;
+	//var link = document.URL;
+	var link = caller.parentElement.children[2].href;
+	link = link.substring(0,link.indexOf('comment/'));
 	var commentID = caller.getAttribute('data');
 	alert(Username + " wrote: \n" + comment + "\nw/ commentID " + commentID + "\nat " + link);
 }
