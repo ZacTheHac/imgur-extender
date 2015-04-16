@@ -29,7 +29,7 @@ body {
 }
 #main {
 	position: relative;
-	top: 50;
+	top: 0;
 	min-height: inherit;
 }
 #main.two-column {
