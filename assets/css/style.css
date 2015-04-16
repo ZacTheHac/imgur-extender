@@ -37,12 +37,11 @@ body {
 	position: relative;
 	margin: 10px auto;
 }
-a:link {
-	text-decoration: none;
-	color: #85BF25;
-}
+a:link,
+a:active,
 a:visited {
-	color: #FFFF00
+	text-decoration: none;
+	color: #4E76C9;
 }
 #save {
 	width: 145px;

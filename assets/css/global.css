@@ -41,6 +41,9 @@
 	word-spacing: normal;
 	padding: 0;
 }
+#footer a {
+	color: #85BF25;
+}
 .header-center {
 	width:700px;
 }
