@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="An imgur extension created by ZacMuerte.">
+		<title>imgur Extender Options</title>
+
+		<link rel="stylesheet" type="text/css" href="assets/css/global.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/menuLeft.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/rightMenu.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	</head>
+
+	<body>
+
+		<!-- Header / Version Bar -->
+		<div id="topbar">
+			<div class="header-center">
+				<div id="bannerWrapper">
+					<h1 id="Banner"> Please wait... </h1>
+				</div>
+			</div>
+		</div>
+
+		<!-- Left Panel -->
+		<div id="main" class="two-column">
+			<div class="panel left">
+
+				<!-- settingsPanel -->
+
+				<div id="settingsPanel" class="">
+					<div id="loadingImg" class="section">
+						<h2>Loading Image:</h2>
+							<input type="text" id="link" placeholder="Link to image">
+							<button id="view">
+								View Image
+							</button>
+							<button id="list">
+								View list
+							</button>
+							<br>
+					</div>
+					<div id="customIcons" class="section">
+						<h2>Custom Icons:</h2>
+						<div class="textbox">
+							<label>
+								<input type="checkbox" id="active">
+								Activate custom icons </label>
+							<br>
+							<label>
+								<input type="checkbox" id="resize">
+								Resize custom icons </label>
+						</div>
+					</div>
+					<div id="customComment" class="section">
+						<h2>Comment Settings:</h2>
+						<div class="textbox">
+							<label>
+								<input type="checkbox" id="markAdmins">
+								Label imgur staff in the comments with <span class="staffTag" style="background-color:#85BF25;width:92px;color:green"><img src="http://s.imgur.com/images/imgurlogo-header.png"></span> </label>
+							<br>
+							<label>
+								<input type="checkbox" id="markSelf">
+								Label yourself in the comments with <span class="selfTag" style="width:92px;color:#85BF25;background-color:Black">YOU</span> </label>
+						</div>
+					</div>
+					<br>
+					<button id="save" class="button-big">
+						Save
+					</button>
+					<br>
+					(Note: settings take effect after next page update)
+				</div>
+
+				<!-- legalPanel -->
+
+				<div id="legalPanel" class="hidden">
+					<div id="disclaimer" class="section">
+						<h2>Because I have to:</h2>
+						<div class="textbox">
+							<h2 id="affiliation" align="center"> "NOT AFFILIATED WITH OR APPROVED BY IMGUR" </h2>
+							<br>
+							<p>
+								That's right.
+							</p>
+							<p>
+								I did this all for you guys, and Sarah, because I wanted you guys to stop bothering Sarah about 1 stupid thing.
+							</p>
+							<p>
+								Seriously, she somehow manages to manage you guys, and, in return, she's bothered about MORE things you guys want her to do.It's a bit crazy.
+								I'm sure you all love her, but you're also quite smothering at times.
+							</p>
+							<p>
+								(Every time I see those posts saying "look at these small little websites that do cool things" I know those websites are going to be dead for the next week.)
+							</p>
+							<br>
+							<p>
+								Either way: go tell her how much you appreciate her, even though she refuses to replace the loading icon again <a href="http://imgur.com/user/sarah">@SARAAAA</a><a href="http://imgur.com/gallery/jTWiyra">AAAAAH</a>.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- creditsPanel -->
+
+				<div id="creditsPanel" class="hidden">
+					<div id="credits" class="section">
+						<h2>Credits:</h2>
+						<div class="textbox">
+							Made by <a href="http://imgur.com/user/ZacMuerte">@ZacMuerte</a> and <a href="http://imgur.com/user/SoulExpression">@SoulExpression</a> for the <span id="filth">horrible filth</span> lovely people at <a href="http://imgur.com/">Imgur</a>
+							<br>
+						</div>
+						<h2>Donations:</h2>
+						<div id="tipjar" class="textbox">
+							If you like what I do, and want to thank me with a little moneytary payment
+							<br>
+							(considering I did lose money creating this)
+							<br>
+							here's a little tip jar:
+							<br>
+							<br>
+
+							<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+								<input type="hidden" name="cmd" value="_donations">
+								<input type="hidden" name="business" value="H7GUCCNDG7EWW">
+								<input type="hidden" name="lc" value="US">
+								<input type="hidden" name="item_name" value="@ZacMuerte on imgur">
+								<input type="hidden" name="item_number" value="6513050">
+								<!-- that number is my ID on imgur. completely static. -->
+								<input type="hidden" name="currency_code" value="USD">
+								<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHosted">
+								<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+								<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+							</form>
+							<br>
+							<!-- Oh no! I have to identify what I do with my GRAND income if this button generates more than $10,000. I don't expect to get much, hopefully enough to cover costs.
+							I didn't encrypt the button so A) I could mess with it, and B) it's going to be a local file, if you edit it, the only one you're hurting is yourself. -->
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Right Menu -->
+
+			<div class="right">
+				<div class="panel menu">
+					<div id="settingsButton" class="textbox button selected">
+						<h2>Settings</h2>
+						<div class="active"></div>
+					</div>
+					<div id="legalButton" class="textbox button">
+						<h2>Legal</h2>
+						<div class="active"></div>
+					</div>
+					<div id="creditsButton" class="textbox button">
+						<h2>Credits</h2>
+						<div class="active"></div>
+					</div>
+				</div>
+			</div>
+			<div id="footer" class="left">
+				<div id="attribution">
+					Made by <a href="http://imgur.com/user/ZacMuerte">@ZacMuerte</a> and <a href="http://imgur.com/user/SoulExpression">@SoulExpression</a> &bull; No affiliation with Imgur, Inc.
+				</div>
+			</div>
+		</div>
+		<script src="assets/js/settingSaver.js"></script>
+		<script src="assets/js/replaceloader.js"></script>
+		<script src="assets/js/style.js"></script>
+	</body>
+</html>
