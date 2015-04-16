@@ -106,8 +106,7 @@ input[type=text]{
 	color: #f2f2f2;
 	letter-spacing: .02em;
 }
-#view,
-#list {
+button {
 	width: 78px;
 	height: 33px;
 	font-size: 14px;
