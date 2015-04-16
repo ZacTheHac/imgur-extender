@@ -2,16 +2,17 @@ $(function() {
 	var settings = $("#settingsPanel");
 	var legal = $("#legalPanel");
 	var credits = $("#creditsPanel");
-	
+
 	$("#settingsButton").on("click", function() {
 		settings.removeClass("hidden");
 		legal.addClass("hidden");
 		credits.addClass("hidden");
+		
 		$("#settingsButton").addClass("selected");
 		$("#legalButton").removeClass("selected");
 		$("#creditsButton").removeClass("selected");
 	});
-	
+
 	$("#legalButton").on("click", function() {
 		settings.addClass("hidden");
 		legal.removeClass("hidden");
@@ -20,7 +21,7 @@ $(function() {
 		$("#legalButton").addClass("selected");
 		$("#creditsButton").removeClass("selected");
 	});
-	
+
 	$("#creditsButton").on("click", function() {
 		settings.addClass("hidden");
 		legal.addClass("hidden");
