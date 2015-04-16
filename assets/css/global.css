@@ -37,11 +37,9 @@
 #footer {
 	clear: both;
 	text-align: right;
-}
-#footer a {
-	padding: 0;
-	word-spacing: normal;
 	font-size: .8em;
+	word-spacing: normal;
+	padding: 0;
 }
 .header-center {
 	width:700px;
