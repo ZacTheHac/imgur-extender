@@ -122,3 +122,11 @@ button {
 	margin: 0;
 	padding: 0;
 }
+#footer {
+	clear: both;
+	text-align: right;
+	font-size: .8em;
+	word-spacing: normal;
+	padding: 0;
+	color: #444442;
+}
