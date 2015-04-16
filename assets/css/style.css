@@ -80,3 +80,6 @@ a:visited {
 	border: 2px solid #444442;
 	cursor: pointer;
 }
+#affiliation {
+	color: red;
+}
