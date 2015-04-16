@@ -86,7 +86,7 @@ a:visited {
 #tipjar {
 	color: #85BF25;
 }
-input[type-text]{
+input[type=text]{
 	width: 454px;
 	margin-right: 5px;
 	float: left;
