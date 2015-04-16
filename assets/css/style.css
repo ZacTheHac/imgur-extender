@@ -107,7 +107,7 @@ input[type=text]{
 	letter-spacing: .02em;
 }
 button {
-	width: 78px;
+	width: 70px;
 	height: 33px;
 	font-size: 14px;
 	font-weight: 700;
@@ -120,5 +120,4 @@ button {
 	cursor: pointer;
 	margin: 0;
 	padding: 0;
-	float: right;
 }
