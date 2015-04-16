@@ -36,6 +36,7 @@
 }
 #footer {
 	clear: both;
+	text-align: right;
 }
 #footer a {
 	padding: 0;
