@@ -29,7 +29,6 @@ body {
 }
 #main {
 	position: relative;
-	top: 100px;
 	min-height: inherit;
 }
 #main.two-column {
