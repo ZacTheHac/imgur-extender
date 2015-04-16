@@ -4,8 +4,8 @@ $(function() {
 	var credits = $("#creditsPanel");
 
 	$("#settingsButton").on("click", function() {
-		settings.removeClass("hidden");
-		legal.addClass("hidden");
+		settings.show();
+		legal.hide();
 		credits.addClass("hidden");
 		
 		$("#settingsButton").addClass("selected");
