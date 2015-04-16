@@ -38,7 +38,8 @@ body {
 	margin: 10px auto;
 }
 a:link {
-	color: #FFFF00
+	text-decoration: none;
+	color: #85BF25;
 }
 a:visited {
 	color: #FFFF00
