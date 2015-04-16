@@ -6,7 +6,7 @@ $(function() {
 	$("#settingsButton").on("click", function() {
 		settings.show();
 		legal.hide();
-		credits.addClass("hidden");
+		credits.hide();
 		
 		$("#settingsButton").addClass("selected");
 		$("#legalButton").removeClass("selected");
@@ -14,18 +14,18 @@ $(function() {
 	});
 
 	$("#legalButton").on("click", function() {
-		settings.addClass("hidden");
-		legal.removeClass("hidden");
-		credits.addClass("hidden");
+		settings.hide();
+		legal.show();
+		credits.hide();
 		$("#settingsButton").removeClass("selected");
 		$("#legalButton").addClass("selected");
 		$("#creditsButton").removeClass("selected");
 	});
 
 	$("#creditsButton").on("click", function() {
-		settings.addClass("hidden");
-		legal.addClass("hidden");
-		credits.removeClass("hidden");
+		settings.hide();
+		legal.hide();
+		credits.show();
 		$("#settingsButton").removeClass("selected");
 		$("#legalButton").removeClass("selected");
 		$("#creditsButton").addClass("selected");
