@@ -93,7 +93,7 @@ chrome.webRequest.onCompleted.addListener(function(details){
 */
 
 chrome.pageAction.onClicked.addListener(function(tab){ //open the settings page when they click on the page action
-	var optionsUrl = chrome.extension.getURL('Settings/settings.html');
+	var optionsUrl = chrome.extension.getURL(chrome.runtime.getManifest().options_page);
 
 	chrome.tabs.query({url: optionsUrl}, function(tabs) {
 		if (tabs.length) {

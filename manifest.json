@@ -4,7 +4,7 @@
   "name": "Imgur Extender",
   "short_name": "iX",
   "description": "Hopefully people will stop bothering @Sarah for new loading gifs every 30 seconds",
-  "version": "1.6",
+  "version": "1.7",
   "icons": { 
    "16": "icon/19.png",
    "19": "icon/19.png",
