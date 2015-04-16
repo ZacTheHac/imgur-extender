@@ -129,5 +129,8 @@ button {
 	word-spacing: normal;
 	padding: 0;
 	color: #444442;
-	text-align: right;
+	float: right;
+}
+.clear {
+	clear: both;
 }
