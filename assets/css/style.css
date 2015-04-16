@@ -87,7 +87,7 @@ a:visited {
 	color: #85BF25;
 }
 input[type=text]{
-	width: 454px;
+	width: 445px;
 	margin-right: 5px;
 	float: left;
 	height: 32px;
@@ -107,7 +107,7 @@ input[type=text]{
 	letter-spacing: .02em;
 }
 button {
-	width: 70px;
+	width: 65px;
 	height: 33px;
 	font-size: 14px;
 	font-weight: 700;
