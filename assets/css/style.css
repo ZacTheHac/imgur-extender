@@ -33,6 +33,7 @@ body {
 #main.two-column {
 	padding: 0;
 	width: 1000px;
+	margin-bottom: 20px;
 	position: relative;
 }
 a:link {
