@@ -29,7 +29,6 @@
 #main {
 	clear: both;
 	z-index: 0;
-	margin: 0 auto;
 }
 .section {
 	margin-bottom: 15px;
@@ -42,7 +41,4 @@
 }
 #topbar.no-logo .header-center #main-nav {
 	margin-left:0;
-}
-table{
-	width: 100%;
 }
