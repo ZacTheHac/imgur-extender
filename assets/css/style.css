@@ -35,6 +35,7 @@ body {
 	width: 1000px;
 	margin-bottom: 20px;
 	position: relative;
+	margin: 10px auto;
 }
 a:link {
 	color: #FFFF00
