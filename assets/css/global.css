@@ -42,6 +42,7 @@
 }
 #topbar.no-logo .header-center #main-nav {
 	margin-left:0;
+	margin-bottom: 0;
 }
 table{
 	width: 100%;
