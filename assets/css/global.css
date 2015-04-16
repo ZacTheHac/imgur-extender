@@ -36,4 +36,9 @@
 #footer {
 	clear: both;
 }
-.header-center{width:700px}#topbar.no-logo .header-center #main-nav{margin-left:0}
+.header-center {
+	width:700px;
+}
+#topbar.no-logo .header-center #main-nav {
+	margin-left:0;
+}
