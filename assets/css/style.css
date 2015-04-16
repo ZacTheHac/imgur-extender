@@ -82,3 +82,9 @@ a:visited {
 #affiliation {
 	color: red;
 }
+#filth {
+	text-decoration: line-through;
+}
+#tipjar {
+	color: #85BF25;
+}

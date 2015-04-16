@@ -11,7 +11,6 @@
 		<link rel="stylesheet" type="text/css" href="assets/css/menuLeft.css" />
 		<link rel="stylesheet" type="text/css" href="assets/css/rightMenu.css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 	</head>
 
 	<body>
@@ -28,9 +27,9 @@
 		<!-- Left Panel -->
 		<div id="main" class="two-column">
 			<div class="panel left">
-				
-<!-- settingsPanel -->
-				
+
+				<!-- settingsPanel -->
+
 				<div class="settings">
 					<div id="loadingImg" class="section">
 						<h2>Loading Image</h2>
@@ -78,7 +77,7 @@
 					(Note: settings take effect after next page update)
 				</div>
 
-<!-- legalPanel -->
+				<!-- legalPanel -->
 
 				<div class="legal hidden">
 					<div id="disclaimer" class="section">
@@ -107,23 +106,22 @@
 					</div>
 				</div>
 
-<!-- creditsPanel -->
+				<!-- creditsPanel -->
 
 				<div class="credits hidden">
 					<div id="credits" class="section">
 						<h2>Credits</h2>
 						<div class="textbox">
-							Made by <a href="http://imgur.com/user/ZacMuerte">@ZacMuerte</a> for the <s> horrible filth </s> lovely people at <a href="http://imgur.com/">Imgur</a>
+							Made by <a href="http://imgur.com/user/ZacMuerte">@ZacMuerte</a> for the <span id="filth">horrible filth</span> lovely people at <a href="http://imgur.com/">Imgur</a>
 							<br>
 						</div>
-						<div class="textbox">
-							<font size="2" color = "85BF25"> if you like what I do, and want to thank me with a little moneytary payment
-								<br>
-								(considering I did lose money creating this)
-								<br>
-								here's a little tip jar:
-								<br>
-							</font>
+						<div id="tipjar" class="textbox">
+							If you like what I do, and want to thank me with a little moneytary payment
+							<br>
+							(considering I did lose money creating this)
+							<br>
+							here's a little tip jar:
+							<br>
 							<br>
 
 							<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -146,19 +144,19 @@
 				</div>
 			</div>
 
-<!-- Right Menu -->
+			<!-- Right Menu -->
 
 			<div class="right">
 				<div class="panel menu">
-					<div class="textbox button selected" data-type="settings">
+					<div class="textbox button selected">
 						<h2>Settings</h2>
 						<div class="active"></div>
 					</div>
-					<div class="textbox button" data-type="legal">
+					<div class="textbox button">
 						<h2>Legal</h2>
 						<div class="active"></div>
 					</div>
-					<div class="textbox button" data-type="credits">
+					<div class="textbox button">
 						<h2>Credits</h2>
 						<div class="active"></div>
 					</div>
@@ -166,7 +164,7 @@
 			</div>
 			<div id="footer">
 				<div id="copyright">
-					Made by @ZacMuerte
+					Made by <a href="http://imgur.com/user/ZacMuerte">@ZacMuerte</a> and <a href="http://imgur.com/user/SoulExpression">@SoulExpression</a>
 				</div>
 			</div>
 		</div>
