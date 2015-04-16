@@ -18,7 +18,7 @@ body {
 	position: relative;
 	z-index: 10;
 	box-shadow: 0 0 11px 1px #111;
-	margin-bottom: 0px;
+	margin-bottom: 0;
 }
 #bannerWrapper {
 	height: 50px;
@@ -29,7 +29,7 @@ body {
 }
 #main {
 	position: relative;
-	top: 100px;
+	top: 50;
 	min-height: inherit;
 }
 #main.two-column {
