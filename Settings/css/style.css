@@ -1,0 +1,84 @@
+html {
+	background-color: #121211;
+}
+body {
+	height: 100%;
+	color: #ddddd1;
+	margin: 0;
+	font-family: Arial, sans serif;
+	font-size: 14px;
+	overflow-y: scroll;
+}
+#topbar {
+	width: 100%;
+	background-color: #2b2b2b;
+	font-size: 15px;
+	height: 50px;
+	font-weight: 700;
+	position: relative;
+	z-index: 10;
+	box-shadow: 0 0 11px 1px #111;
+}
+#bannerWrapper {
+	height: 50px;
+}
+#Banner {
+	padding-top: 7px;
+	height: 43px;
+}
+#main {
+	position: relative;
+	top: 100px;
+	min-height: inherit;
+}
+#main.two-column {
+	padding: 0;
+	width: 1000px;
+	position: relative;
+	margin-bottom: 20px;
+}
+a:link {
+	color: #FFFF00
+}
+a:visited {
+	color: #FFFF00
+}
+#save {
+	width: 145px;
+	height: 44px;
+	font-size: 18px;
+	font-weight: 700;
+	color: #fff;
+	font-family: arial, sans-serif;
+	background: linear-gradient(to bottom, #2b2b2b 0, #121211 100%);
+	border-radius: 8px;
+	border: 2px solid #444442;
+	cursor: pointer;
+}
+#save:hover {
+	width: 145px;
+	height: 44px;
+	font-size: 18px;
+	font-weight: 700;
+	color: #fff;
+	font-family: arial, sans-serif;
+	background: linear-gradient(to bottom,#2b2b2b 0,#444442 0,#121211 100%);
+	border-radius: 8px;
+	border: 2px solid #444442;
+	cursor: pointer;
+}
+#save:active {
+	width: 145px;
+	height: 44px;
+	font-size: 18px;
+	font-weight: 700;
+	color: #fff;
+	font-family: arial, sans-serif;
+	background: #121211;
+	border-radius: 8px;
+	border: 2px solid #444442;
+	cursor: pointer;
+}
+#affiliation {
+	color: red;
+}

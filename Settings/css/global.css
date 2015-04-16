@@ -1,0 +1,39 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+.left{
+	float: left;
+}
+.right {
+	float: right;
+}
+#main.two-column .right .panel h1 {
+	line-height:28px;
+	font-size:25px;
+}
+.panel {
+	background-color: #2b2b2b;
+	padding: 25px;
+	border-radius: 10px;
+	position: relative;
+}
+.hidden {
+	display: none;
+}
+.textbox {
+	background-color: #181817;
+	border-radius: 4px;
+	padding: 10px;
+}
+#main {
+	clear: both;
+	z-index: 0;
+}
+.section {
+	margin-bottom: 15px;
+}
+#footer {
+	clear: both;
+}
+.header-center{width:700px}#topbar.no-logo .header-center #main-nav{margin-left:0}

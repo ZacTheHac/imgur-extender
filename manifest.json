@@ -10,7 +10,7 @@
    "19": "icon/19.png",
    "48": "icon/48.png",
    "128": "icon/128.png" },
-   "options_page": "settings.html",
+   "options_page": "Settings/settings.html",
 
   "permissions": [
     "storage",
