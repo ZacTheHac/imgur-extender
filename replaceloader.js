@@ -59,7 +59,7 @@ function addFavButtons() {
 			if ((comment_option_boxes[t].favAdded != "true") && (comment_option_boxes[t].innerHTML.indexOf('"item permalink-caption-link') != -1)) { //doesn't have the favorite button, but has a permalink button.
 				//get the comment ID
 				var comIDStart = comment_option_boxes[t].innerHTML.indexOf('/comment/') + 9;
-				var comment_ID = comment_option_boxes[t].innerHTML.substring(comIDStart, comment_option_boxes[t].innerHTML.indexOf('" data-reactid=',comIDStart));
+				var comment_ID = comment_option_boxes[t].innerHTML.substring(comIDStart, comment_option_boxes[t].innerHTML.indexOf('" data-reactid=', comIDStart));
 				comment_option_boxes[t].innerHTML = comment_option_boxes[t].innerHTML //.substring(0,comment_option_boxes[t].innerHTML.indexOf('">permalink</a>')+17) 
 					+ favorite_1 + comment_ID + fav_2; //+ comment_option_boxes[t].innerHTML.substring(comment_option_boxes[t].innerHTML.indexOf('">permalink</div>')+17,comment_option_boxes[t].innerHTML.length);
 				comment_option_boxes[t].favAdded = "true";
@@ -82,7 +82,7 @@ function addFavButtons() {
 }
 
 function addUserIDs(commenters) {
-	if (settings.ListID) {//figured I should move this to the top so it DOESNT LOOP IF IT DOESN'T HAVE TO
+	if (settings.ListID) { //figured I should move this to the top so it DOESNT LOOP IF IT DOESN'T HAVE TO
 		for (var i = 0, length = commenters.length; i < length; i++) { //put userIDs
 			if (commenters[i].IDProcessed != "true") {
 				try {
@@ -101,49 +101,93 @@ function addUserIDs(commenters) {
 	}
 }
 
-function markUsers() {
-	document.removeEventListener("DOMSubtreeModified", markUsers); //make it so my modifications don't recursively call this again and again.
-	var StaffMembers = ['Alan', 'sarah', 'TyrannoSARAusRex', 'tonygoogs', 'badmonkey0001', 'spatrizi', 'brianna', 'talklittle', 'untest3d', 'thespottedbunny', 'cfry99'];
-	var GenerallyCoolPeople = ['mistersavage', 'sarah'];
-	var genCoolPplTags = ['<span style="width:92px;color:#85BF25;background-color:Black">THE Adam Savage</span>', '<span style="width:92px;color:#85BF25;background-color:Black">SaraPls</span>'];
-
-	if (document.readyState == "complete") {
-		addFavButtons();
-
-		var commenters = document.getElementsByClassName("usertext textbox first1");
-		//I would add userIDs here, but that's gone forever, at least as automatic. code is kept, but never run
-
-		if (document.URL.indexOf('/user/') == -1) { //we're not on a userpage
-			getUser();
+			//DATA BLOCK BEGIN
+			var StaffMembers = ['Alan', 'sarah', 'TyrannoSARAusRex', 'tonygoogs', 'badmonkey0001', 'spatrizi', 'brianna', 'talklittle', 'untest3d', 'thespottedbunny', 'cfry99', 'LizForbes', 'heyjude168', 'andytuba', 'cgallello'];
+			var GenerallyCoolPeople = ['mistersavage', 'sarah', 'Lassann'];
+			var genCoolPplTags = ['<span style="width:92px;color:#85BF25;background-color:Black;font-size:small">THE Adam Savage</span>', '<span style="width:92px;color:#85BF25;background-color:Black">SaraPls</span>', '<span style="width:92px;color:RED;background-color:Black">Lassann</span>'];
 			var selfTag = '<span class="selfTag" style="width:92px;color:#85BF25;background-color:Black">YOU</span> ';
 			var Imp = "width:92px;color:BLACK;background-color:#85BF25;font-size:15px"
 			var unImp = "font-size:11px;color:SlateGray;background-color:"
 			var myTag = '<span class="creatorTag" style=' + Imp + '>iX</span><span style=' + unImp + '>-imgur Extender creator</span> ';
 			var staffTag = '<span class="staffTag" style="background-color:#85BF25;width:92px !important;height:36px !important;color:green"><img src="http://s.imgur.com/images/imgurlogo-header.png"></span>';
+			//Data block end
+
+function markUsers() {
+	document.removeEventListener("DOMSubtreeModified", markUsers); //make it so my modifications don't recursively call this again and again.
+
+	if (document.readyState == "complete") {
+		addFavButtons();
+
+		getUser(); //updates the username
+		var commenters = document.getElementsByClassName("usertext textbox first1");
+		//I would add userIDs here, but that's gone forever, at least as automatic. code is kept, but never run
+
+		if (document.URL.indexOf('/user/') == -1) { //we're not on a userpage
+
 			var currUserName;
-			try {//put the try outside so that when it breaks it doesn't break super badly...
+			try { //put the try outside so that when it breaks it doesn't break super badly...
+				//comment tags
+				var tag = "";
 				for (var i = 0, length = commenters.length; i < length; i++) {
 					if (commenters[i].tagged != "true") {
 						currUserName = commenters[i].getElementsByClassName("author")[0].children[0].innerText; //gets their username
 						currUserName = currUserName.substring(0, currUserName.length - 1); //remove the trailing space
+
+						//generate tag
+						//staff
 						if (settings.MarkStaff) {
-							if (contains(StaffMembers, currUserName) != -1) { //staff
-								commenters[i].innerHTML = staffTag + commenters[i].innerHTML;
+							if (contains(StaffMembers, currUserName) != -1) {
+								tag += staffTag;
 							}
 						}
-						var userNum = contains(GenerallyCoolPeople, currUserName); //cool people
+						//cool people
+						var userNum = contains(GenerallyCoolPeople, currUserName);
 						if (userNum != -1) {
-							commenters[i].innerHTML = genCoolPplTags[userNum] + commenters[i].innerHTML;
+							tag += genCoolPplTags[userNum];
 						}
-						if (settings.MarkSelf && loggedIn && currUserName == user) { //YOU
-							commenters[i].innerHTML = selfTag + commenters[i].innerHTML;
+						//YOU
+						if (settings.MarkSelf && loggedIn && currUserName == user) {
+							tag += selfTag;
 						}
-						if (currUserName == 'ZacMuerte') { //ooh! that's me they're talkin' about!
-							commenters[i].innerHTML = myTag + commenters[i].innerHTML;
+						//iX staff
+						if (currUserName == 'ZacMuerte' || currUserName == 'SoulExpression') {
+							tag += myTag;
 						}
+
+
+						commenters[i].innerHTML = tag + commenters[i].innerHTML;
+						tag = "";
 						commenters[i].tagged = "true";
 					}
 				}
+				//gallery poster tags - move this outside. like once the url changes? it's apparently too expensive to have inside...
+				/*if (poster.length > 0 && poster[0].tagged != "true") {
+					currUserName = poster[0].innerText.substring(3, poster[0].innerText.indexOf(" ", 3))
+
+					//staff
+					if (settings.MarkStaff) {
+						if (contains(StaffMembers, currUserName) != -1) {
+							tag += staffTag;
+						}
+					}
+					//cool people
+					var userNum = contains(GenerallyCoolPeople, currUserName);
+					if (userNum != -1) {
+						tag += genCoolPplTags[userNum];
+					}
+					//YOU
+					if (settings.MarkSelf && loggedIn && currUserName == user) {
+						tag += selfTag;
+					}
+					//iX staff
+					if (currUserName == 'ZacMuerte' || currUserName == 'SoulExpression') {
+						tag += myTag;
+					}
+
+					poster[0].innerHTML = poster[0].innerHTML + tag;
+					tag ="";
+					poster[0].tagged = true;
+				}*/
 			} catch (ex) {
 				console.log("[iX] Staff marking failed!" + ex);
 			}
@@ -153,6 +197,52 @@ function markUsers() {
 }
 document.addEventListener("DOMSubtreeModified", markUsers);
 
+function markPoster() {
+	if (document.readyState == "complete") {
+		document.removeEventListener("DOMSubtreeModified", markPoster);
+		var currUserName;
+		var poster = document.getElementsByClassName("under-title-info");
+		if (poster.length > 0 && poster[0].children[0].children[3] != null && poster[0].children[0].children[3].tagged != true) {//had to drill down to find something that is modified when switching between posts.
+			var tag = "";
+			//alert("marking posters");
+			getUser(); //updates the username
+
+			currUserName = poster[0].innerText;
+			if (currUserName.indexOf("by") == -1) {
+				currUserName = "(source)";
+			} else {
+				currUserName = currUserName.substring(3, poster[0].innerText.indexOf(" ", 3));
+			}
+
+			//staff
+			if (settings.MarkStaff) {
+				if (contains(StaffMembers, currUserName) != -1) {
+					tag += staffTag;
+				}
+			}
+			//cool people
+			var userNum = contains(GenerallyCoolPeople, currUserName);
+			if (userNum != -1) {
+				tag += genCoolPplTags[userNum];
+			}
+			//YOU
+			if (settings.MarkSelf && loggedIn && currUserName == user) {
+				tag += selfTag;
+			}
+			//iX staff
+			if (currUserName == 'ZacMuerte' || currUserName == 'SoulExpression') {
+				tag += myTag;
+			}
+
+			document.getElementById("image-title").innerHTML += tag;
+			tag = "";
+			poster[0].children[0].children[3].tagged = true;
+		}
+		document.addEventListener("DOMSubtreeModified", markPoster);
+	}
+
+}
+//document.addEventListener("DOMSubtreeModified", markPoster);
 //how to make favorited comments:
 //new datatypes are weird, but it'll be an object containing: author (author's ID as well, because that can change) comment ID, image link (these combined can form the direct link), the comment (in case it's deleted or some shit), and the time it was favourited (i dunno, fuck you man)
 
@@ -176,26 +266,26 @@ function addFavComment(caller) {
 	var lengthOfName = authorTag.innerHTML.substring(nameStart, nameStart + 64).indexOf('"'); //grabs the front end of their name, and looks where the closing quote lies (the max length of usernames is 64)
 	var Username = authorTag.innerHTML.substring(nameStart, nameStart + lengthOfName);
 	//var authorId = authorTag.attributes["data-author"].value
-		//I need to find a way to grab their ID now.
+	//I need to find a way to grab their ID now.
 	var comment = caller.parentElement.parentElement.parentElement.parentElement.children[caller.parentElement.parentElement.parentElement.parentElement.children.length - 1].innerText; //stupid badges fucked it up. it's fixed now
 	//var link = document.URL;
 	var link = caller.parentElement.children[2].href;
-	link = link.substring(0,link.indexOf('comment/'));
+	link = link.substring(0, link.indexOf('comment/'));
 	var commentID = caller.getAttribute('data');
 	alert(Username + " wrote: \n" + comment + "\nw/ commentID " + commentID + "\nat " + link);
 }
 
 function getUser() {
-	if (document.getElementsByClassName('account-user-name')[0] === null) {
+	if (document.getElementsByClassName('account-user-name')[0] == null) {
 		loggedIn = false;
 		console.log("You aren't signed into imgur!");
-		_gaq.push(['_setCustomVar', 1, 'Login', 'N/A', 2]);
+		//_gaq.push(['_setCustomVar', 1, 'Login', 'N/A', 2]);
 	} //they're not signed in
 	else {
 		loggedIn = true;
 		var userlink = document.getElementsByClassName('account-user-name')[0].href;
 		user = userlink.substring(userlink.lastIndexOf("/") + 1, userlink.length);
-		_gaq.push(['_setCustomVar', 1, 'Login', user, 2]);
+		//_gaq.push(['_setCustomVar', 1, 'Login', user, 2]);
 		//console.log("Hello "+user+"! Thank you for using imgur x-tend!"); 
 	}
 }
@@ -259,10 +349,15 @@ _gaq.push(['_setAccount', 'UA-59801034-1']);
 _gaq.push(['_trackPageview']);
 
 (function() {
+	try{
 	var ga = document.createElement('script');
 	ga.type = 'text/javascript';
 	ga.async = true;
 	ga.src = 'https://ssl.google-analytics.com/ga.js';
 	var s = document.getElementsByTagName('script')[0];
 	s.parentNode.insertBefore(ga, s);
+}
+catch(analyticserr){
+	console.log("[iX] Analytics adding failed!" + analyticserr);
+}
 })();

@@ -31,7 +31,7 @@
   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
   "content_scripts":[{
 	"matches": ["*://*.imgur.com/*","*://imgur.com/*"],
-	"js": ["replaceloader.js"],
+	"js": ["Settings/assets/js/jquery-2.1.3.min.js","replaceloader.js"],
 	"run_at": "document_start",
 	"all_frames": true
  }]
