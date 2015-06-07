@@ -102,7 +102,7 @@ function addUserIDs(commenters) {
 }
 
 			//DATA BLOCK BEGIN
-			var StaffMembers = ['Alan', 'sarah', 'TyrannoSARAusRex', 'tonygoogs', 'badmonkey0001', 'spatrizi', 'brianna', 'talklittle', 'untest3d', 'thespottedbunny', 'cfry99', 'LizForbes', 'heyjude168', 'andytuba', 'cgallello'];
+			var StaffMembers = ['Alan', 'sarah', 'tyrannoSARAusRex', 'tonygoogs', 'badmonkey0001', 'spatrizi', 'brianna', 'talklittle', 'untest3d', 'thespottedbunny', 'cfry99', 'LizForbes', 'heyjude168', 'andytuba', 'cgallello'];
 			var GenerallyCoolPeople = ['mistersavage', 'sarah', 'Lassann'];
 			var genCoolPplTags = ['<span style="width:92px;color:#85BF25;background-color:Black;font-size:small">THE Adam Savage</span>', '<span style="width:92px;color:#85BF25;background-color:Black">SaraPls</span>', '<span style="width:92px;color:RED;background-color:Black">Lassann</span>'];
 			var selfTag = '<span class="selfTag" style="width:92px;color:#85BF25;background-color:Black">YOU</span> ';

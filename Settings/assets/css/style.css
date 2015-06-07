@@ -130,3 +130,16 @@ button {
 	padding: 0;
 	color: #444442;
 }
+
+.CTusername {
+	max-width: 100px;
+	word-wrap: break-word;
+}
+.CThtml {
+	max-width: 350px;
+	word-wrap: break-word;
+}
+.CTvisual {
+	max-width: 100px;
+	word-wrap: break-word;
+}
