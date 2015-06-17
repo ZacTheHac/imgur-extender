@@ -140,6 +140,14 @@ button {
 	word-wrap: break-word;
 }
 .CTvisual {
-	max-width: 100px;
+	max-width: 150px;
 	word-wrap: break-word;
+}
+#UserTags {
+	height: 150px;
+	overflow: auto;
+}
+#CTEditBox{
+	max-width: 350px;
+	margin-right: 0px;
 }

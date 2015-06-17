@@ -38,7 +38,9 @@ function restore_options() {
 		Activated: true,
 		Resize: true,
 		MarkStaff: true,
-		MarkSelf: true
+		MarkSelf: true,
+		CustomTagNames: ['mistersavage', 'sarah', 'Lassann'],
+		CustomTagTags: ['<span style="width:92px;color:#85BF25;background-color:Black;font-size:small">THE Adam Savage</span>', '<span style="width:92px;color:#85BF25;background-color:Black">SaraPls</span>', '<span style="width:92px;color:RED;background-color:Black">Lassann</span>']
 	}, function(items) {
 		settings = items;
 		document.getElementById('link').value = items.LoadingLink;
@@ -46,6 +48,7 @@ function restore_options() {
 		document.getElementById('resize').checked = items.Resize;
 		document.getElementById('markAdmins').checked = items.MarkStaff;
 		document.getElementById('markSelf').checked = items.MarkSelf;
+		buildCustomTags(items.CustomTagNames, items.CustomTagTags);
 	});
 }
 
@@ -61,16 +64,66 @@ function load_options() {
 	});
 }
 
-function escapeHtml(text) {
-  var map = {
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#039;'
-  };
+function buildCustomTags(CTNames, CTTags) {
+	var tagTable = document.getElementById("customTagsTable").children[0];
+	for (var i = 0; i < CTNames.length; i++) {
+		var name = CTNames[i];
+		var tag = CTTags[i];
+		var html = '<TR>\n<TD class="CTusername" id="CTusername' + i + '" tagnum="' + i + '"><span class="innerText">';
+		html += name + '</span></TD>\n';
+		html += '<TD class="CThtml" id="CThtml' + i + '" tagnum="' + i + '"><span class="innerText">' + escapeHtml(CTTags[i]) + '</span></TD>';
+		html += '<TD class="CTvisual" id="CTvisual' + i + '" tagnum="' + i + '"><span class="innerText">' + CTTags[i] + '</span></TD>\n</TR>';
+		tagTable.innerHTML += html;
+	};
 
-  return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+	var table = document.getElementById("customTagsTable");
+		for (var i = 1; i < table.rows.length; i++) {
+			for (var j = 0; j < table.rows[i].cells.length-1; j++) {
+				table.rows[i].cells[j].addEventListener('click', function() {tableClicked(this);});
+			}
+		}
+		var TRElem = document.createElement("TR");
+		TRElem.innerHTML = '<TD id="addNew">Add New...</TD>'
+	tagTable.appendChild(TRElem);
+	document.getElementById("addNew").addEventListener('click', addNewTag);
+
+}
+
+function tableClicked(cell) {
+	//alert("Cell clicked:\n" + cell.innerText);
+	var input = document.createElement("input");
+	input.setAttribute("type","text");
+	input.setAttribute("id","CTEditBox");
+	input.setAttribute("style","width:"+cell.offsetWidth+"px;");
+
+	//get which one of the boxes it is, and prefill it with the apropriate text
+	if(cell.id.indexOf("html") != -1){//it's an html node
+		input.value = document.getElementById("CTvisual"+cell.getAttribute("tagnum")).children[0].innerHTML;
+	}
+	else{
+		input.value = cell.innerText;
+	}
+
+	cell.replaceChild(input,cell.children[0]);
+	//add a handle here that says when they click to finalize the text.
+}
+
+function addNewTag() {
+	alert("NYI");
+}
+
+function escapeHtml(text) {
+	var map = {
+		'&': '&amp;',
+		'<': '&lt;',
+		'>': '&gt;',
+		'"': '&quot;',
+		"'": '&#039;'
+	};
+
+	return text.replace(/[&<>"']/g, function(m) {
+		return map[m];
+	});
 }
 
 function view_image() {

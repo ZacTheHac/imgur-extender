@@ -51,17 +51,23 @@ function contains(a, obj) {
 //ZacMuerte:6513050
 function addFavButtons() {
 	//lets add a favorite button, shall we? maybe do this with an event on the "class="caption-toolbar combobox edit-button"" click maybe?
-	var favorite_1 = '<div class="item favorite-caption-link" id="favoriteComment" data="'; //funny thing: once it's been used, it switches to class="item favorite-caption-link opened" for some reason.
-	var fav_2 = '">favorite NYI</div>';
+	var FaveElem = document.createElement("div");
+	FaveElem.class = "item favorite-caption-link";
+	FaveElem.innerText = "Favorite NYI";
+
+	//var favorite_1 = '<div class="item favorite-caption-link" id="favoriteComment" data="'; //funny thing: once it's been used, it switches to class="item favorite-caption-link opened" for some reason.
+	//var fav_2 = '">favorite NYI</div>';
 	try {
 		var comment_option_boxes = document.getElementsByClassName("options");
 		for (var t = 0; t < comment_option_boxes.length; t++) {
 			if ((comment_option_boxes[t].favAdded != "true") && (comment_option_boxes[t].innerHTML.indexOf('"item permalink-caption-link') != -1)) { //doesn't have the favorite button, but has a permalink button.
 				//get the comment ID
 				var comIDStart = comment_option_boxes[t].innerHTML.indexOf('/comment/') + 9;
-				var comment_ID = comment_option_boxes[t].innerHTML.substring(comIDStart, comment_option_boxes[t].innerHTML.indexOf('" data-reactid=', comIDStart));
-				comment_option_boxes[t].innerHTML = comment_option_boxes[t].innerHTML //.substring(0,comment_option_boxes[t].innerHTML.indexOf('">permalink</a>')+17) 
-					+ favorite_1 + comment_ID + fav_2; //+ comment_option_boxes[t].innerHTML.substring(comment_option_boxes[t].innerHTML.indexOf('">permalink</div>')+17,comment_option_boxes[t].innerHTML.length);
+				var comIDEnd = comment_option_boxes[t].innerHTML.indexOf('/',comIDStart);
+				var comment_ID = comment_option_boxes[t].innerHTML.substring(comIDStart, comIDEnd);
+				FaveElem.data = comment_ID;
+				comment_option_boxes[t].appendChild(FaveElem);
+				//comment_option_boxes[t].innerHTML = comment_option_boxes[t].innerHTML + favorite_1 + comment_ID + fav_2; //+ comment_option_boxes[t].innerHTML.substring(comment_option_boxes[t].innerHTML.indexOf('">permalink</div>')+17,comment_option_boxes[t].innerHTML.length);
 				comment_option_boxes[t].favAdded = "true";
 			}
 		}
