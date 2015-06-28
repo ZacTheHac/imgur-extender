@@ -114,7 +114,9 @@ function addUserIDs(commenters) {
 			var selfTag = '<span class="selfTag" style="width:92px;color:#85BF25;background-color:Black">YOU</span> ';
 			var Imp = "width:92px;color:BLACK;background-color:#85BF25;font-size:15px"
 			var unImp = "font-size:11px;color:SlateGray;background-color:"
-			var myTag = '<span class="creatorTag" style=' + Imp + '>iX</span><span style=' + unImp + '>-imgur Extender creator</span> ';
+			//var myTag = '<span class="creatorTag" style=' + Imp + '>iX</span><span style=' + unImp + '>-imgur Extender creator</span> ';
+			var myTag =  '<span class="creatorTag" style="background-color:#85BF25;font-size:15px;color:SlateGray"><img src="'+chrome.extension.getURL('icon/19.png')+'" alt="imgur Extender">creator</span> ';
+			var helperTag =  '<span class="creatorTag" style="background-color:#85BF25;font-size:15px;color:SlateGray"><img src="'+chrome.extension.getURL('icon/19.png')+'" alt="imgur Extender">Helper</span> ';
 			var staffTag = '<span class="staffTag" style="background-color:#85BF25;width:92px !important;height:36px !important;color:green"><img src="http://s.imgur.com/images/imgurlogo-header.png"></span>';
 			//Data block end
 
@@ -156,8 +158,11 @@ function markUsers() {
 							tag += selfTag;
 						}
 						//iX staff
-						if (currUserName == 'ZacMuerte' || currUserName == 'SoulExpression') {
+						if (currUserName == 'ZacMuerte') {
 							tag += myTag;
+						}
+						else if(currUserName == 'SoulExpression'){
+							tag += helperTag;
 						}
 
 
@@ -167,6 +172,7 @@ function markUsers() {
 					}
 				}
 				//gallery poster tags - move this outside. like once the url changes? it's apparently too expensive to have inside...
+				//probably want to add it to data-reactid=".4.2" which is the timestamp
 				/*if (poster.length > 0 && poster[0].tagged != "true") {
 					currUserName = poster[0].innerText.substring(3, poster[0].innerText.indexOf(" ", 3))
 
@@ -193,7 +199,15 @@ function markUsers() {
 					poster[0].innerHTML = poster[0].innerHTML + tag;
 					tag ="";
 					poster[0].tagged = true;
-				}*/
+				}
+while I'm at it, I can make reply buttons always visible (for like deleted comments) rather easily:
+var style = document.createElement('style');
+var css = '.caption-deleted a[href^="/user"], .caption-deleted a.reply { display: inline;}';
+style.appendChild(document.createTextNode(css));
+document.head.appendChild(style);
+
+
+				*/
 			} catch (ex) {
 				console.log("[iX] Staff marking failed!" + ex);
 			}

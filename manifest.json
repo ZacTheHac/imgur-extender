@@ -20,6 +20,9 @@
 	"*://*.imgur.com/*",
 	"tabs"
   ],
+  "web_accessible_resources": [
+    "icon/*.png"
+  ],
   "page_action": {
     "default_icon": "icon/19-disabled.png",
     "default_title": "SOMETHING BROKE. PANIC."
