@@ -40,7 +40,7 @@ function restore_options() {
 		MarkStaff: true,
 		MarkSelf: true,
 		CustomTagNames: ['mistersavage', 'sarah', 'Lassann'],
-		CustomTagTags: ['<span style="width:92px;color:#85BF25;background-color:Black;font-size:small">THE Adam Savage</span>', '<span style="width:92px;color:#85BF25;background-color:Black">SaraPls</span>', '<span style="width:92px;color:RED;background-color:Black">Lassann</span>']
+		CustomTagTags: ['<span style="width:92px;color:#85BF25;background-color:Black;font-size:small">THE Adam Savage</span>', '<span style="width:92px;color:#85BF25;background-color:Black">SeraPls</span>', '<span style="width:92px;color:RED;background-color:Black">Lassann</span>']
 	}, function(items) {
 		settings = items;
 		document.getElementById('link').value = items.LoadingLink;

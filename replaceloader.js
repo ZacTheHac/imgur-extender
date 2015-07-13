@@ -108,12 +108,12 @@ function addUserIDs(commenters) {
 }
 
 			//DATA BLOCK BEGIN
-			var StaffMembers = ['Alan', 'sarah', 'tyrannoSARAusRex', 'tonygoogs', 'badmonkey0001', 'spatrizi', 'brianna', 'talklittle', 'untest3d', 'thespottedbunny', 'cfry99', 'LizForbes', 'heyjude168', 'andytuba', 'cgallello'];
+			var StaffMembers = ['Alan', 'sarah', 'tyrannoSARAusrex', 'tonygoogs', 'badmonkey0001', 'spatrizi', 'brianna', 'talklittle', 'untest3d', 'thespottedbunny', 'cfry99', 'LizForbes', 'heyjude168', 'andytuba', 'cgallello'];
 			var GenerallyCoolPeople = ['mistersavage', 'sarah', 'Lassann'];
-			var genCoolPplTags = ['<span style="width:92px;color:#85BF25;background-color:Black;font-size:small">THE Adam Savage</span>', '<span style="width:92px;color:#85BF25;background-color:Black">SaraPls</span>', '<span style="width:92px;color:RED;background-color:Black">Lassann</span>'];
+			var genCoolPplTags = ['<span style="width:92px;color:#85BF25;background-color:Black;font-size:small">THE Adam Savage</span>', '<span style="width:92px;color:#85BF25;background-color:Black">SeraPls</span>', '<span style="width:92px;color:RED;background-color:Black">Lassann</span>'];
 			var selfTag = '<span class="selfTag" style="width:92px;color:#85BF25;background-color:Black">YOU</span> ';
-			var Imp = "width:92px;color:BLACK;background-color:#85BF25;font-size:15px"
-			var unImp = "font-size:11px;color:SlateGray;background-color:"
+			//var Imp = "width:92px;color:BLACK;background-color:#85BF25;font-size:15px"
+			//var unImp = "font-size:11px;color:SlateGray;background-color:"
 			//var myTag = '<span class="creatorTag" style=' + Imp + '>iX</span><span style=' + unImp + '>-imgur Extender creator</span> ';
 			var myTag =  '<span class="creatorTag" style="background-color:#85BF25;font-size:15px;color:SlateGray"><img src="'+chrome.extension.getURL('icon/19.png')+'" alt="imgur Extender">creator</span> ';
 			var helperTag =  '<span class="creatorTag" style="background-color:#85BF25;font-size:15px;color:SlateGray"><img src="'+chrome.extension.getURL('icon/19.png')+'" alt="imgur Extender">Helper</span> ';
@@ -124,8 +124,8 @@ function markUsers() {
 	document.removeEventListener("DOMSubtreeModified", markUsers); //make it so my modifications don't recursively call this again and again.
 
 	if (document.readyState == "complete") {
-		addFavButtons();
-
+		//addFavButtons();
+			//favorite buttons removed until I get it workin
 		getUser(); //updates the username
 		var commenters = document.getElementsByClassName("usertext textbox first1");
 		//I would add userIDs here, but that's gone forever, at least as automatic. code is kept, but never run
