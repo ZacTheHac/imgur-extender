@@ -41,24 +41,22 @@ function getSettings(){ //loads the user settings
 	});
 }
 
-function settingsLoaded(){
-	settings = items;
-	if(isAprilFools()){
-		settings.LoadingLink = weirdLoader();
-	}
-	setLoaded = true;
-}
-
 function waitForGetSettings(){
-	getSettings();
-	try{
-	setTimeout(function(){waiting();},300);
-}
-catch(noway){}
-}
-
-function waiting(){
-	setTimeout(function(){if(!setLoaded){waiting();}},1000);
+	if(!setLoaded){
+		getSettings();
+		var counter = 0;
+		while(!setLoaded){
+			//do nothing?
+			counter++;
+			//console.log("[iX] Waited "+counter+" cycles for setting to load.");
+			if(counter > 2000){
+				console.log("[iX] Settings not loaded.");
+				break;//emergency breakout
+			}
+		}
+		if(setLoaded)
+			console.log("[iX] Settings Loaded succesfully!");
+	}
 }
 
 chrome.tabs.onUpdated.addListener(ShowPageAction);
