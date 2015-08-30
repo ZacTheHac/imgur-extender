@@ -115,8 +115,8 @@ function addUserIDs(commenters) {
 			//var Imp = "width:92px;color:BLACK;background-color:#85BF25;font-size:15px"
 			//var unImp = "font-size:11px;color:SlateGray;background-color:"
 			//var myTag = '<span class="creatorTag" style=' + Imp + '>iX</span><span style=' + unImp + '>-imgur Extender creator</span> ';
-			var myTag =  '<span class="creatorTag" style="background-color:#85BF25;font-size:15px;color:SlateGray"><img src="'+chrome.extension.getURL('icon/19.png')+'" alt="imgur Extender">creator</span> ';
-			var helperTag =  '<span class="creatorTag" style="background-color:#85BF25;font-size:15px;color:SlateGray"><img src="'+chrome.extension.getURL('icon/19.png')+'" alt="imgur Extender">Helper</span> ';
+			var myTag =  '<span class="creatorTag" style="background-color:#85BF25;font-size:15px;color:SlateGray"><img src="'+chrome.extension.getURL('icon/16.png')+'" alt="imgur Extender">creator</span> ';
+			var helperTag =  '<span class="creatorTag" style="background-color:#85BF25;font-size:15px;color:SlateGray"><img src="'+chrome.extension.getURL('icon/16.png')+'" alt="imgur Extender">Helper</span> ';
 			var staffTag = '<span class="staffTag" style="background-color:#85BF25;width:92px !important;height:36px !important;color:green"><img src="http://s.imgur.com/images/imgurlogo-header.png"></span>';
 			//Data block end
 
@@ -217,6 +217,7 @@ document.head.appendChild(style);
 }
 document.addEventListener("DOMSubtreeModified", markUsers);
 
+/* this isn't ever used, and it was confusing me
 function markPoster() {
 	if (document.readyState == "complete") {
 		document.removeEventListener("DOMSubtreeModified", markPoster);
@@ -261,7 +262,8 @@ function markPoster() {
 		document.addEventListener("DOMSubtreeModified", markPoster);
 	}
 
-}
+} 
+*/
 //document.addEventListener("DOMSubtreeModified", markPoster);
 //how to make favorited comments:
 //new datatypes are weird, but it'll be an object containing: author (author's ID as well, because that can change) comment ID, image link (these combined can form the direct link), the comment (in case it's deleted or some shit), and the time it was favourited (i dunno, fuck you man)

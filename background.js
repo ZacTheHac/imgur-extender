@@ -66,11 +66,11 @@ function ShowPageAction(tabId, changeInfo, tab) {
 		waitForGetSettings();
 		if(settings.Activated){
 			chrome.pageAction.setTitle({tabId: tab.id, title: 'Custom loading icons active!'});
-			chrome.pageAction.setIcon({tabId: tab.id, path:'icon/19.png'});
+			chrome.pageAction.setIcon({tabId: tab.id, path:'icon/16.png'});
 		}
 		else{
 			chrome.pageAction.setTitle({tabId: tab.id, title: 'Using default imgur loading icons'});
-			chrome.pageAction.setIcon({tabId: tab.id, path:'icon/19-disabled.png'});
+			chrome.pageAction.setIcon({tabId: tab.id, path:'icon/16-bw.png'});
 		}
 	}
 };
