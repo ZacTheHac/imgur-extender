@@ -115,8 +115,8 @@ function addUserIDs(commenters) {
 			//var Imp = "width:92px;color:BLACK;background-color:#85BF25;font-size:15px"
 			//var unImp = "font-size:11px;color:SlateGray;background-color:"
 			//var myTag = '<span class="creatorTag" style=' + Imp + '>iX</span><span style=' + unImp + '>-imgur Extender creator</span> ';
-			var myTag =  '<span class="creatorTag" style="background-color:#85BF25;font-size:15px;color:SlateGray"><img src="'+chrome.extension.getURL('icon/16.png')+'" alt="imgur Extender">creator</span> ';
-			var helperTag =  '<span class="creatorTag" style="background-color:#85BF25;font-size:15px;color:SlateGray"><img src="'+chrome.extension.getURL('icon/16.png')+'" alt="imgur Extender">Helper</span> ';
+			var myTag =  '<span class="creatorTag" style="background-color:#85BF25;font-size:15px;color:SlateGray"><img src="'+chrome.extension.getURL('icon/32.png')+'" alt="imgur Extender" height="25">Creator</span> ';
+			var helperTag =  '<span class="creatorTag" style="background-color:#85BF25;font-size:15px;color:SlateGray"><img src="'+chrome.extension.getURL('icon/32.png')+'" alt="imgur Extender" height="25">Helper</span> ';
 			var staffTag = '<span class="staffTag" style="background-color:#85BF25;width:92px !important;height:36px !important;color:green"><img src="http://s.imgur.com/images/imgurlogo-header.png"></span>';
 			//Data block end
 

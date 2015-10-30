@@ -49,7 +49,7 @@ function waitForGetSettings(){
 			//do nothing?
 			counter++;
 			//console.log("[iX] Waited "+counter+" cycles for setting to load.");
-			if(counter > 2000){
+			if(counter > 20){
 				console.log("[iX] Settings not loaded.");
 				break;//emergency breakout
 			}
@@ -66,11 +66,11 @@ function ShowPageAction(tabId, changeInfo, tab) {
 		waitForGetSettings();
 		if(settings.Activated){
 			chrome.pageAction.setTitle({tabId: tab.id, title: 'Custom loading icons active!'});
-			chrome.pageAction.setIcon({tabId: tab.id, path:'icon/16.png'});
+			chrome.pageAction.setIcon({tabId: tab.id, path:'icon/32.png'});
 		}
 		else{
 			chrome.pageAction.setTitle({tabId: tab.id, title: 'Using default imgur loading icons'});
-			chrome.pageAction.setIcon({tabId: tab.id, path:'icon/16-bw.png'});
+			chrome.pageAction.setIcon({tabId: tab.id, path:'icon/32-bw.png'});
 		}
 	}
 };
