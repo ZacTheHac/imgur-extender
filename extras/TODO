@@ -2,6 +2,7 @@ TODO:
 custom tags implimented in an editable way
 possibly update custom tags to actually be embedded using JS, not html+=
 impliment upvote/downvote events: http://imgur.com/gallery/4F0OZ/comment/441549096
+put numbers on album posts
 
 low priority:
 favoriting comments.
