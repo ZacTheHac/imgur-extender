@@ -28,7 +28,7 @@
   ],
   "page_action": {
     "default_icon": "icon/16-bw.png",
-    "default_title": "SOMETHING BROKE. PANIC."
+    "default_title": "Not active. Or I broke. One of the two."
   },
   "background": {
      "scripts": ["background.js"],

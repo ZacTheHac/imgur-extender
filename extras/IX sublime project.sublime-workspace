@@ -1,0 +1,533 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"_Eye",
+				"_EyeWidth"
+			],
+			[
+				"Blink",
+				"BlinkDelay"
+			],
+			[
+				"Color",
+				"Color_ALL"
+			],
+			[
+				"_",
+				"_height"
+			],
+			[
+				"h",
+				"height"
+			],
+			[
+				"re",
+				"remove"
+			],
+			[
+				"every",
+				"everything"
+			],
+			[
+				"app",
+				"appendChild"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"Cus",
+				"CustomTagTags"
+			],
+			[
+				"CustomTag",
+				"CustomTagNames"
+			],
+			[
+				"staff",
+				"staffTag"
+			],
+			[
+				"cu",
+				"currUserName"
+			],
+			[
+				"Sta",
+				"StaffMembers"
+			],
+			[
+				"setting",
+				"settingsLoaded"
+			],
+			[
+				"weird",
+				"weirdLoader"
+			],
+			[
+				"sett",
+				"settings"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/D/Dropbox/imgurextend/replaceloader.js",
+			"settings":
+			{
+				"buffer_size": 16235,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "TODO",
+			"settings":
+			{
+				"buffer_size": 267,
+				"line_ending": "Windows",
+				"name": "TODO:"
+			}
+		},
+		{
+			"file": "/D/Dropbox/imgurextend/manifest.json",
+			"settings":
+			{
+				"buffer_size": 1130,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Secret notes.txt",
+			"settings":
+			{
+				"buffer_size": 68,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Dropbox/imgurextend/background.js",
+			"settings":
+			{
+				"buffer_size": 3814,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 127.0,
+		"selected_items":
+		[
+			[
+				"sublimeclan",
+				"Preferences: SublimeClang Settings – User"
+			],
+			[
+				"sublimeclang",
+				"Preferences: SublimeClang Settings – Default"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"Install Package",
+				"Package Control: Install Package"
+			],
+			[
+				"package control",
+				"Package Control: Add Channel"
+			],
+			[
+				"ja",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"Package Control: list",
+				"Package Control: List Packages"
+			],
+			[
+				"Package Control: in	",
+				"Package Control: Advanced Install Package"
+			],
+			[
+				"ssj",
+				"Set Syntax: JavaScript"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/john/AppData/Roaming/Sublime Text 2/Packages/User/SublimeClang.sublime-settings",
+		"/C/Users/john/AppData/Roaming/Sublime Text 2/Packages/SublimeClang/SublimeClang.sublime-settings",
+		"/C/Users/john/AppData/Roaming/Sublime Text 2/Packages/User/Package Control.sublime-settings",
+		"/C/Users/john/AppData/Roaming/Sublime Text 2/Packages/Package Control/Package Control.sublime-settings",
+		"/C/Users/john/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/john/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/john/AppData/Roaming/Arduino15/preferences.txt",
+		"/C/Users/john/Desktop/Books/VNs/bearschool/Blain.py",
+		"/D/Dropbox/imgurextend/Settings/assets/js/settingSaver.js",
+		"/D/Dropbox/imgurextend/Settings/settings.html",
+		"/D/Dropbox/imgurextend/Settings/assets/css/style.css",
+		"/D/Dropbox/imgurextend/Settings/assets/js/style.js",
+		"/D/Dropbox/imgurextend/Settings/assets/css/global.css",
+		"/C/Users/john/Desktop/techkeys_source/main_techkeys.c",
+		"/C/Users/john/Desktop/techkeys_source/Makefile",
+		"/C/Users/john/AppData/Local/Temp/Temp1_techkeys_source.zip/techkeys_source/main_techkeys.c",
+		"/H/Minecraft/.minecraft/config/WailaNBT/AdvancedSolarPanel.json",
+		"/H/Minecraft/.minecraft/config/WailaNBT/ThermalExpansion.json",
+		"/H/Minecraft/.minecraft/config/WailaNBT/default.json",
+		"/C/Users/john/Desktop/carbon/backup.json",
+		"/H/Minecraft/.minecraft/config/cofh/world/Vanilla.json",
+		"/C/Users/john/AppData/Local/Temp/Temp1_backup.zip/backup.json",
+		"/C/Users/john/AppData/Local/Temp/Temp1_backup (2).zip/backup.json",
+		"/C/Users/john/AppData/Local/Temp/Temp1_backup (1).zip/backup.json",
+		"/C/Users/john/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/john/AppData/Roaming/Sublime Text 2/Packages/User/Python.sublime-settings",
+		"/H/Minecraft/.minecraft/config/ProjectE/customConversions/metals.json",
+		"/H/Minecraft/.minecraft/config/ProjectE/customConversions/example.json",
+		"/C/Users/john/Desktop/Books/VNs/BearSchoolFirstSemester-all/Bear School_orig.py",
+		"/C/Users/john/Desktop/game stuff/FTG/ZacTheHac record-pack/pack.json",
+		"/G/other media/websites/fazbear daycare/assets.tumblr.com/assets/scripts/single_media_image2ee7.js",
+		"/D/Dropbox/BingPongMod/manifest.json",
+		"/D/Dropbox/BingPongMod/_metadata/verified_contents.json",
+		"/D/Dropbox/BingPongMod/_metadata/computed_hashes.json",
+		"/D/Dropbox/BingPongMod/scripts/bp-helper.js",
+		"/D/Dropbox/BingPongMod/scripts/options.js",
+		"/D/Dropbox/BingPongMod/scripts/script.js",
+		"/D/Dropbox/BingPongMod/scripts/popup.js",
+		"/D/Dropbox/BingPongMod/scripts/buy.js",
+		"/C/Users/john/AppData/Local/Google/Chrome/User Data/Default/Extensions/cohnfldcnegepfhhfbcgecblgjdcmcka/1.1.1.3_0/manifest.json",
+		"/D/Dropbox/rockstar emblem unfucker/manifest.json",
+		"/D/Dropbox/rockstar emblem unfucker/replaceloader.js",
+		"/C/Users/john/Desktop/eSix Extend.user.js",
+		"/D/Dropbox/imgurextend/manifest.json",
+		"/C/Users/john/Desktop/runwinamp w minilyrics.bat",
+		"/C/Users/john/Desktop/VNs/Willy_Bear_Beach-1.3-all/Willy Bear Beach.py",
+		"/C/Users/john/Desktop/VNs/Willy_Bear_Beach-1.3-all/lib/windows-i686/Lib/pygame/image.pyd",
+		"/C/Users/john/Desktop/VNs/Willy_Bear_Beach-1.3-all/game/saves/1-1-LT1.save",
+		"/C/Users/john/Desktop/runwinamp w minilyrics",
+		"/D/Dropbox/imgurextend/Settings/settingSaver.js",
+		"/D/Dropbox/imgurextend/settingSaver.js",
+		"/D/Dropbox/imgurextend/settings.html"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"int",
+			"font",
+			"\"Blain's Dad\"",
+			"high",
+			"word",
+			"TODO",
+			"neck",
+			"blainMeter \\+=",
+			"blainMeter +=",
+			"blainMeter \\+=",
+			"Mr[^.]",
+			"Mrs",
+			"Mr[^.]",
+			"Mr[^s\\.]",
+			"Mr[^.]",
+			"Mr[^\\.s]",
+			"who don't nee",
+			"DAY ",
+			"17",
+			"bad_ending_kerry1",
+			"scent",
+			"musk",
+			"tears",
+			"blainMeter",
+			"\\.\\.\\. [a-z]",
+			"\\.\\.\\.[a-z]",
+			"waitForGetSettings()",
+			"icon",
+			"waitFor",
+			"comment",
+			"save",
+			"favorite",
+			"TagNum",
+			"taList",
+			"getUser()",
+			"user",
+			"username",
+			"sarah",
+			"{",
+			"ListI",
+			"listI",
+			"Setting",
+			"load_options"
+		],
+		"highlight": true,
+		"in_selection": true,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"tagnum"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/D/Dropbox/imgurextend/replaceloader.js",
+					"settings":
+					{
+						"buffer_size": 16235,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5129,
+								5129
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "TODO",
+					"settings":
+					{
+						"buffer_size": 267,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								231,
+								231
+							]
+						],
+						"settings":
+						{
+							"auto_name": "TODO:",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/D/Dropbox/imgurextend/manifest.json",
+					"settings":
+					{
+						"buffer_size": 1130,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								469,
+								469
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Secret notes.txt",
+					"settings":
+					{
+						"buffer_size": 68,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/D/Dropbox/imgurextend/background.js",
+					"settings":
+					{
+						"buffer_size": 3814,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								854,
+								854
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.clang":
+	{
+		"height": 124.0
+	},
+	"output.exec":
+	{
+		"height": 118.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"todo",
+				"/D/Dropbox/imgurextend/extras/TODO"
+			],
+			[
+				"",
+				"/C/Users/john/Desktop/Books/VNs/bearschool/Blain.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}

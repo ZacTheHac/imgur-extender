@@ -108,7 +108,7 @@ function addUserIDs(commenters) {
 }
 
 			//DATA BLOCK BEGIN
-			var StaffMembers = ['Alan', 'sarah', 'tyrannoSARAusrex', 'tonygoogs', 'badmonkey0001', 'spatrizi', 'brianna', 'talklittle', 'untest3d', 'thespottedbunny', 'cfry99', 'LizForbes', 'heyjude168', 'andytuba', 'cgallello'];
+			var StaffMembers = ['Alan', 'sarah', 'tyrannoSARAusrex', 'tonygoogs', 'badmonkey0001', 'spatrizi', 'brianna', 'talklittle', 'untest3d', 'thespottedbunny', 'cfry99', 'LizForbes', 'heyjude168', 'andytuba', 'cgallello', 'montypython004'];
 			var GenerallyCoolPeople = ['mistersavage', 'sarah', 'Lassann'];
 			var genCoolPplTags = ['<span style="width:92px;color:#85BF25;background-color:Black;font-size:small">THE Adam Savage</span>', '<span style="width:92px;color:#85BF25;background-color:Black">SeraPls</span>', '<span style="width:92px;color:RED;background-color:Black">Lassann</span>'];
 			var selfTag = '<span class="selfTag" style="width:92px;color:#85BF25;background-color:Black">YOU</span> ';
@@ -171,6 +171,9 @@ function markUsers() {
 						commenters[i].tagged = "true";
 					}
 				}
+				//remove "via apps"
+				$('.via').remove();
+				
 				//gallery poster tags - move this outside. like once the url changes? it's apparently too expensive to have inside...
 				//probably want to add it to data-reactid=".4.2" which is the timestamp
 				/*if (poster.length > 0 && poster[0].tagged != "true") {
@@ -335,7 +338,7 @@ function resizeImages() {
 					//					alert("found one!");
 				}
 			} catch (ex) {
-				console.log('[iX] Something broke while resizing loading icons.' + ex);
+				console.log('[iX] Something broke while resizing loading icons. ' + ex);
 			}
 		}
 	}
@@ -380,6 +383,6 @@ _gaq.push(['_trackPageview']);
 	s.parentNode.insertBefore(ga, s);
 }
 catch(analyticserr){
-	console.log("[iX] Analytics adding failed!" + analyticserr);
+	console.log("[iX] Analytics adding failed! " + analyticserr);
 }
 })();
