@@ -20,4 +20,8 @@ A chrome extension to add additional functionality to popular image-sharing webs
 ## Other authors:
   * [Max Azarcon](https://github.com/maxazarcon) redesigned the settings page and provided a new vector logo
 
+## Core Files:
+ * [background.js](https://github.com/ZacTheHac/imgur-extender/blob/master/background.js) is the core script file, but mostly handles loading initial settings, intercepting web requests, and providing analytics feedback
+ * [replaceloader.js](https://github.com/ZacTheHac/imgur-extender/blob/master/replaceloader.js) does all the heavy lifting including scraping and modifying page data
+
 <img src="https://i.imgur.com/EBKI3wj.png">
