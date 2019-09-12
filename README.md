@@ -8,7 +8,7 @@ A chrome extension to add additional functionality to popular image-sharing webs
     >Allows settings to be saved and loaded across synced devices
   * webRequest / webRequestBlocking
     >Allows interception of file requests to replace the loading icon
-  * *://*.imgur.com/*
+  * &ast;://&ast;.imgur.com/&ast;
     >Allows me to read and modify page data for various tasks such as tagging users in comments
   * tab
     >The shadiest permission request, as it shows up as "all browsing history", but simply lets me know which tabs have the script actively running, and verify there aren't multiple copies of the settings page open at once.\
@@ -18,4 +18,6 @@ A chrome extension to add additional functionality to popular image-sharing webs
   * [jQuery](https://jquery.com/)
 
 ## Other authors:
-  * [Max Azarcon](https://github.com/maxazarcon) redesigned the settings page
+  * [Max Azarcon](https://github.com/maxazarcon) redesigned the settings page and provided a new vector logo
+
+<img src="https://i.imgur.com/EBKI3wj.png">
