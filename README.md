@@ -1,0 +1,21 @@
+# Imgur Extender
+A chrome extension to add additional functionality to popular image-sharing website [Imgur](https://imgur.com/) such as changing the loading icon and marking staff members in the comments.
+
+## [Chrome Web Store link](https://chrome.google.com/webstore/detail/imgur-extender/gcnjboicdkemcdhcmanaokkpjhiikblf)
+
+## Required Permissions:
+  * storage
+    >Allows settings to be saved and loaded across synced devices
+  * webRequest / webRequestBlocking
+    >Allows interception of file requests to replace the loading icon
+  * *://*.imgur.com/*
+    >Allows me to read and modify page data for various tasks such as tagging users in comments
+  * tab
+    >The shadiest permission request, as it shows up as "all browsing history", but simply lets me know which tabs have the script actively running, and verify there aren't multiple copies of the settings page open at once.\
+    *There have been updates to the framework that may allow the script to work without this permission in the future.*
+
+## Dependencies:
+  * [jQuery](https://jquery.com/)
+
+## Other authors:
+  * [Max Azarcon](https://github.com/maxazarcon) redesigned the settings page
