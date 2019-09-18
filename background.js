@@ -27,7 +27,7 @@ function weirdLoader(){
 function getSettings(){ //loads the user settings
 	setLoaded = false;
 	chrome.storage.sync.get({
-		LoadingLink: 'http://i.imgur.com/QirvO9D.gif',
+		LoadingLink: 'https://i.imgur.com/QirvO9D.gif',
 		Activated: true,
 		Resize: true,
 		MarkStaff: true,
@@ -40,6 +40,8 @@ function getSettings(){ //loads the user settings
 		setLoaded = true;
 	});
 }
+
+getSettings();//load settings immediately
 
 function waitForGetSettings(){
 	if(!setLoaded){
@@ -59,7 +61,7 @@ function waitForGetSettings(){
 	}
 }
 
-chrome.tabs.onUpdated.addListener(ShowPageAction);
+/*chrome.tabs.onUpdated.addListener(ShowPageAction);
 function ShowPageAction(tabId, changeInfo, tab) {
 	if (tab.url.indexOf('imgur.com') != -1) {
 		chrome.pageAction.show(tabId);
@@ -73,7 +75,57 @@ function ShowPageAction(tabId, changeInfo, tab) {
 			chrome.pageAction.setIcon({tabId: tab.id, path:'icon/32-bw.png'});
 		}
 	}
-};
+};*/
+
+//chrome.runtime.onInstalled.addListener(function() {
+    chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
+		createSetIconAction('icon/16.png', 'icon/32.png', 'icon/48.png', function(setIconAction){
+        chrome.declarativeContent.onPageChanged.addRules([
+			{
+            conditions: [
+                new chrome.declarativeContent.PageStateMatcher({
+                    pageUrl: {
+                        hostEquals: 'imgur.com'
+                    }
+                })
+            ],
+            actions: [
+				new chrome.declarativeContent.ShowPageAction(),
+				setIconAction
+			]
+			}
+		]);
+    });
+	});
+//}
+//declarativecontent seticon doesn't support img paths, only image data.
+//this function changes it into imgdata and sets the icon
+function createSetIconAction(path16, path32, path48, callback) {
+	var canvas = document.createElement("canvas");
+	var ctx = canvas.getContext("2d");
+	var image16 = new Image();
+	image16.onload = function() {
+	  ctx.drawImage(image16,0,0,16,16);
+	  var imageData16 = ctx.getImageData(0,0,16,16);
+	  var image32 = new Image();
+	  image32.onload = function() {
+		ctx.drawImage(image32,0,0,32,32);
+		var imageData32 = ctx.getImageData(0,0,32,32);
+		var image48 = new Image();
+		image48.onload = function(){
+			ctx.drawImage(image48,0,0,48,48);
+			var imageData48 = ctx.getImageData(0,0,48,48);      
+				var action = new chrome.declarativeContent.SetIcon({
+				  imageData: {16: imageData16, 32: imageData32, 48: imageData48}
+				});
+				callback(action);
+		}
+		image48.src = chrome.runtime.getURL(path48);
+	  }
+	  image32.src = chrome.runtime.getURL(path32);
+	}
+	image16.src = chrome.runtime.getURL(path16);
+  }
 
 chrome.webRequest.onBeforeRequest.addListener(function(details){
 	waitForGetSettings();
@@ -90,7 +142,7 @@ chrome.webRequest.onCompleted.addListener(function(details){
 },{urls: ["*://imgur.com/*","*://*.imgur.com/*"]});
 */
 
-chrome.pageAction.onClicked.addListener(function(tab){ //open the settings page when they click on the page action
+/*chrome.pageAction.onClicked.addListener(function(tab){ //open the settings page when they click on the page action
 	var optionsUrl = chrome.extension.getURL(chrome.runtime.getManifest().options_page);
 
 	chrome.tabs.query({url: optionsUrl}, function(tabs) {
@@ -101,6 +153,12 @@ chrome.pageAction.onClicked.addListener(function(tab){ //open the settings page 
 			chrome.tabs.create({url: optionsUrl});
 		}
 	});
+}); */
+//"tabs" permission is being cracked down on, so I'm just going to remove this functionality to allow for stricter permissions
+
+chrome.pageAction.onClicked.addListener(function(){ //open the settings page when they click on the page action
+	var optionsUrl = chrome.extension.getURL(chrome.runtime.getManifest().options_page);
+	chrome.tabs.create({url: optionsUrl});
 });
 
 var _gaq = _gaq || [];

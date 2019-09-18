@@ -24,7 +24,7 @@ function getImgurResponse() {
 
 function load_options() {
 	chrome.storage.sync.get({
-		LoadingLink: 'http://i.imgur.com/QirvO9D.gif',
+		LoadingLink: 'https://i.imgur.com/QirvO9D.gif',
 		Activated: true,
 		Resize: true,
 		MarkStaff: true,
@@ -140,6 +140,7 @@ function markUsers() {
 					if (commenters[i].tagged != "true") {
 						currUserName = commenters[i].getElementsByClassName("author")[0].children[0].innerText; //gets their username
 						currUserName = currUserName.substring(0, currUserName.length - 1); //remove the trailing space
+						console.log("[iX] Checking comments from "+currUserName);
 
 						//generate tag
 						//staff

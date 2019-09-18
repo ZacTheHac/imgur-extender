@@ -4,7 +4,7 @@
   "name": "Imgur Extender",
   "short_name": "iX",
   "description": "Hopefully people will stop bothering @Sarah for new loading gifs every 30 seconds",
-  "version": "1.8",
+  "version": "1.9",
   "icons": { 
    "16": "icon/16.png",
    "32": "icon/32.png",
@@ -21,14 +21,14 @@
 	"webRequestBlocking",
     "*://imgur.com/*",
 	"*://*.imgur.com/*",
-	"tabs"
+  "declarativeContent"
   ],
   "web_accessible_resources": [
     "icon/*.png"
   ],
   "page_action": {
     "default_icon": "icon/16-bw.png",
-    "default_title": "Not active. Or I broke. One of the two."
+    "default_title": "imgur Extender"
   },
   "background": {
      "scripts": ["background.js"],
