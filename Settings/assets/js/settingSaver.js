@@ -34,7 +34,7 @@ function save_options() {
 
 function restore_options() {
 	chrome.storage.sync.get({
-		LoadingLink: 'http://i.imgur.com/QirvO9D.gif',
+		LoadingLink: 'https://i.imgur.com/QirvO9D.gif',
 		Activated: true,
 		Resize: true,
 		MarkStaff: true,

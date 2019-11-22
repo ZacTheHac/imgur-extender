@@ -140,7 +140,7 @@ function markUsers() {
 					if (commenters[i].tagged != "true") {
 						currUserName = commenters[i].getElementsByClassName("author")[0].children[0].innerText; //gets their username
 						currUserName = currUserName.substring(0, currUserName.length - 1); //remove the trailing space
-						console.log("[iX] Checking comments from "+currUserName);
+						//console.log("[iX] Checking comments from "+currUserName);
 
 						//generate tag
 						//staff
